@@ -1,0 +1,8 @@
+base para fazer o conky funcionar gira em torno de 2 variáveis
+
+# fazer a janela ser facilmente decectada pelo WM 
+owm_window_class Conky
+
+# fazer transparência no wm
+own_window_type desktop #bspwm
+own_window_type override #dwm
