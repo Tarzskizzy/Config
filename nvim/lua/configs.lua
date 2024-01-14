@@ -14,4 +14,4 @@ vim.cmd("let g:netrw_winsize = 25")
 vim.cmd("let g:netrw_localcopydircmd = 'cp -r'")
 vim.cmd("let g:netrw_preview = 1")
 
-
+vim.cmd("Gitsigns toggle_current_line_blame")
