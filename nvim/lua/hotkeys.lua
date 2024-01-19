@@ -4,6 +4,15 @@ vim.keymap.set('n','<C-u>','<C-u>zz')
 vim.keymap.set('n','<C-d>','<C-d>zz')
 vim.keymap.set('n','n','nzz')
 vim.keymap.set('n','N','Nzz')
+vim.keymap.set('n','<Tab>',':tabNext<Enter>',opts)
+vim.keymap.set('n','<S-Tab>',':tabprevious<Enter>',opts)
+vim.keymap.set('n','<A-d>',':tabclose<Enter>',opts)
+vim.keymap.set('n','<A-t>',':tabnew<Enter>',opts)
+vim.keymap.set('n','<C-l>',':vertical resize -5<Enter>',opts)
+vim.keymap.set('n','<C-h>',':vertical resize +5<Enter>',opts)
+vim.keymap.set('n','<C-j>',':resize +2<Enter>',opts)
+vim.keymap.set('n','<C-k>',':resize -2<Enter>',opts)
+
 
 -- TOGGLE TERM HOTKEYS
 vim.keymap.set('n','<leader>tf',':ToggleTerm direction=float<Enter>',opts)
@@ -20,19 +29,13 @@ vim.keymap.set('n','<leader>fg',Tbuiltin.live_grep,{})
 vim.keymap.set('n','<leader>fb',Tbuiltin.buffers,{})
 vim.keymap.set('n','<leader>fh',Tbuiltin.help_tags,{})
 vim.keymap.set('n','<leader>ft',Tbuiltin.builtin,{})
+vim.keymap.set('n','<leader>fd',Tbuiltin.lsp_definitions,{})
+vim.keymap.set('n','<leader>fr',Tbuiltin.lsp_references,{})
 
--- BARBAR HOTKEYS
-local map = vim.api.nvim_set_keymap
-map('n','<tab>',':BufferNext<Enter>',opts)
-map('n','<S-tab>',':BufferPrevious<Enter>',opts)
-map('n','<A-c>',':BufferClose<Enter>',opts)
-map('n','<A-p>',':BufferPin<Enter>',opts)
-map('n','<A-d>',':bdelete<Enter>',opts)
-
--- NVIM TREE HOTKEYS
-vim.keymap.set('n','<leader>da',':Neotree toggle<Enter>',opts)
-vim.keymap.set('n','<leader>dd',':Neotree focus<Enter>',opts)
-
+-- BUFFER COMAND
+vim.keymap.set('n','<A-c>',':bdelete<Enter>',opts)
+vim.keymap.set('n','<A-.>',':bnext<Enter>',opts)
+vim.keymap.set('n','<A-,>',':bprevious<Enter>',opts)
 -- MARKDOWN-PREVIEW
 vim.keymap.set('n','<leader>mm',':MarkdownPreviewToggle<Enter>',opts)
 vim.keymap.set('n','<leader>mi',':MarkdownPreview<Enter>',opts)
@@ -59,3 +62,14 @@ vim.keymap.set({"i", "s"}, "<C-E>", function()
 		ls.change_choice(1)
 	end
 end, {silent = true})
+
+-- OIL
+vim.keymap.set('n','<leader>oo',':Oil<Enter>',opts)
+
+-- COMMENT
+-- `gcc` - Toggles the current line using linewise comment
+-- `gbc` - Toggles the current line using blockwise comment
+-- `[count]gcc` - Toggles the number of line given as a prefix-count using linewise
+-- `[count]gbc` - Toggles the number of line given as a prefix-count using blockwise
+-- `gc[count]{motion}` - (Op-pending) Toggles the region using linewise comment
+-- `gb[count]{motion}` - (Op-pending) Toggles the region using blockwise comment
