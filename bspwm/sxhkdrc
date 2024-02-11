@@ -4,9 +4,9 @@
 
 ##---------- Keybindings for bspwm ----------##
 
-# Terminal (alacritty)
+# Terminal (kitty)
 super + Return 
-	bspterm
+	kitty
 
 ##---------- Rofi Launcher & Menus ----------##
 
