@@ -40,5 +40,9 @@ return {
        on_attach = on_attach,
        capabilities = capabilities,
     }
+    lsp.ast_grep.setup{
+      on_attach = on_attach,
+      capabilities = capabilities,
+    }
   end
 }

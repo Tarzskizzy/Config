@@ -15,7 +15,7 @@ vim.cmd("set tgc")
 
 require("lazy").setup({
 	spec = {
-		{ "LazyVim/LazyVim"}, --import = "lazyvim.plugins" },
+		--{ "LazyVim/LazyVim"}, --import = "lazyvim.plugins" },
 		{ import = "plugins.core" },
 		{ import = "plugins.languages" },
 		{ import = "plugins.themes" },
