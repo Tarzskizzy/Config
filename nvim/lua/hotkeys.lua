@@ -31,6 +31,7 @@ vim.keymap.set('n','<leader>fh',Tbuiltin.help_tags,{})
 vim.keymap.set('n','<leader>ft',Tbuiltin.builtin,{})
 vim.keymap.set('n','<leader>fd',Tbuiltin.lsp_definitions,{})
 vim.keymap.set('n','<leader>fr',Tbuiltin.lsp_references,{})
+vim.keymap.set('n','<leader>fv',":Telescope file_browser<Enter>",opts);
 
 -- BUFFER COMAND
 vim.keymap.set('n','<A-c>',':bdelete<Enter>',opts)
