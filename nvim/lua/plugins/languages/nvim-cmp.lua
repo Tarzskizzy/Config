@@ -2,7 +2,12 @@ return {
   'hrsh7th/nvim-cmp',
   dependencies = {'hrsh7th/cmp-nvim-lsp','hrsh7th/cmp-path','hrsh7th/cmp-buffer','saadparwaiz1/cmp_luasnip','L3MON4D3/LuaSnip',"rafamadriz/friendly-snippets"},
   config = function()
+    local cmp_autopairs = require('nvim-autopairs.completion.cmp')
     local cmp = require("cmp")
+    cmp.event:on(
+      'confirm_done',
+      cmp_autopairs.on_confirm_done()
+    )
     require("luasnip.loaders.from_vscode").lazy_load()
     local lspkind = require("lspkind")
     cmp.setup({
