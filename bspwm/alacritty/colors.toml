@@ -1,7 +1,4 @@
-## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
-##
-## Colors configuration -------------------------------------
-
+## Colors configuration
 [colors.primary]
 background = "#2E3440"
 foreground = "#D8DEE9"

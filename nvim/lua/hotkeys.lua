@@ -4,10 +4,6 @@ vim.keymap.set('n','<C-u>','<C-u>zz')
 vim.keymap.set('n','<C-d>','<C-d>zz')
 vim.keymap.set('n','n','nzz')
 vim.keymap.set('n','N','Nzz')
-vim.keymap.set('n','<Tab>',':tabNext<Enter>',opts)
-vim.keymap.set('n','<S-Tab>',':tabprevious<Enter>',opts)
-vim.keymap.set('n','<A-d>',':tabclose<Enter>',opts)
-vim.keymap.set('n','<A-t>',':tabnew<Enter>',opts)
 vim.keymap.set('n','<C-l>',':vertical resize -5<Enter>',opts)
 vim.keymap.set('n','<C-h>',':vertical resize +5<Enter>',opts)
 vim.keymap.set('n','<C-j>',':resize +2<Enter>',opts)
@@ -31,7 +27,10 @@ vim.keymap.set('n','<leader>fh',Tbuiltin.help_tags,{})
 vim.keymap.set('n','<leader>ft',Tbuiltin.builtin,{})
 vim.keymap.set('n','<leader>fd',Tbuiltin.lsp_definitions,{})
 vim.keymap.set('n','<leader>fr',Tbuiltin.lsp_references,{})
-vim.keymap.set('n','<leader>fv',":Telescope file_browser<Enter>",opts);
+
+
+-- OIL NVIM
+vim.keymap.set('n','<leader>oo',":Oil<Enter>",opts);
 
 -- BUFFER COMAND
 vim.keymap.set('n','<A-c>',':bdelete<Enter>',opts)

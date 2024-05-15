@@ -4,7 +4,7 @@ return {
   config = function()
     require("mason").setup()
     require("mason-lspconfig").setup({
-      ensure_installed = {"lua_ls","clangd","pyright",}
+      ensure_installed = {"lua_ls","clangd","pyright","cssls","ast_grep","biome"}
     })
     --attach
     -- local on_attach = function(_,bufnr)

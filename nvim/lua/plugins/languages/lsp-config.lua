@@ -36,13 +36,18 @@ return {
       on_attach = on_attach,
       capabilities = capabilities
     }
-    lsp.ast_grep.setup{
-       on_attach = on_attach,
-       capabilities = capabilities,
-    }
-    lsp.ast_grep.setup{
+    lsp.cssls.setup{
       on_attach = on_attach,
-      capabilities = capabilities,
+      capabilities = capabilities
+
+    }
+    lsp.html.setup{
+      on_attach = on_attach,
+      capabilities = capabilities
+    }
+    lsp.biome.setup{
+      on_attach = on_attach,
+      capabilities = capabilities
     }
   end
 }

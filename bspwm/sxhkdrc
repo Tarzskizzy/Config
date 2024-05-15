@@ -4,9 +4,9 @@
 
 ##---------- Keybindings for bspwm ----------##
 
-# Terminal (kitty)
+# Terminal (alacritty)
 super + Return 
-	kitty
+	bspterm
 
 ##---------- Rofi Launcher & Menus ----------##
 
@@ -97,8 +97,12 @@ super + {_,shift +}Tab
 	bspc desktop --focus {prev.occupied,next.occupied}
 
 # Switch workspace or Send focused Node to another workspace
-super + {_,shift + }{1-8} 
-	bspc {desktop -f,node -d} '^{1-8}' '--follow'
+#super + {_,shift + }{1-8} 
+#	bspc {desktop -f,node -d} '^{1-8}' '--follow'
+
+#view like tags
+super + {_,shift + }{1-9,0}
+    bspc {desktop -f,node -d} 'pointed:^{1-9,10}'
 
 
 # switch workspaces in arrow
