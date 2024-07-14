@@ -9,6 +9,11 @@ vim.keymap.set('n','<C-h>',':vertical resize +5<Enter>',opts)
 vim.keymap.set('n','<C-j>',':resize +2<Enter>',opts)
 vim.keymap.set('n','<C-k>',':resize -2<Enter>',opts)
 
+-- TMUX NAVIGATION
+vim.keymap.set('n','<C-k>',':TmuxNavigateUp<Enter>')
+vim.keymap.set('n','<C-j>',':TmuxNavigateDown<Enter>')
+vim.keymap.set('n','<C-h>',':TmuxNavigateLeft<Enter>')
+vim.keymap.set('n','<C-l>',':TmuxNavigateRight<Enter>')
 
 -- TOGGLE TERM HOTKEYS
 vim.keymap.set('n','<leader>tf',':ToggleTerm direction=float<Enter>',opts)

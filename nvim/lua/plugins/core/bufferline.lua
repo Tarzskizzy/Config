@@ -3,8 +3,6 @@ return{
   version = "*",
   dependencies = 'nvim-tree/nvim-web-devicons',
   init = function()
-    require("bufferline").setup{
-
-    }
+    require("bufferline").setup{}
   end
 }

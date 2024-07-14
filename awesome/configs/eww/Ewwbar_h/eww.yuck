@@ -1,0 +1,135 @@
+
+(defwindow EwwBar_OneDark
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "1.5%"
+                               :width "99%"
+                               :anchor "top center")
+           :reserve (struts :distance "8%" :side "top")
+           :windowtype "dock"
+           :wm-ignore false
+  (bar)
+)
+
+
+
+(defwidget bar []
+  (box 
+    :spacing 0
+    :orientation "h"
+
+    :height 1
+    ;; :halign space-evenly
+    :class "bar"
+    (ws :names area-trabalho-total :current-idx area-trabalho-atual)
+    (sys)
+    (box 
+      :space-evenly false 
+      :halign "end" 
+      :valign "center"
+      (progress :value {EWW_RAM.used_mem_perc} :orientation "h" :class "progress_RAM")
+      (progress :value {EWW_CPU.avg} :orientation "h" :class "progress_RAM")
+      (tempo)
+    )
+  )
+)
+
+(defwidget logo []
+  (
+    :space-evenly false 
+    :halign "end" 
+    :valign "center"
+    label :text "logo do systema"
+    :halign "start"
+  )
+)
+(defwidget sys []
+  (systray
+    :height 1
+    :class "system-tray"
+    :halign "center"
+    :spacing 2
+    :icon-size 24
+  )
+)
+(defwidget itens []
+  (label :text "itens genasldfkjsaldfjsaldkjéricos" :halign "end")
+)
+
+(defwidget tempo []
+  (label 
+    :class "tempo"
+    :text "Calendário" 
+    :style "background-color:blue;"
+    :halign "end"
+  )
+)
+
+(defwidget ws [names current-idx]
+	(box
+    :space-evenly false 
+    :class "workspaces-kit"
+    :halign "start"
+    :valign "center"
+		;; :space-evenly true
+		;; (box
+		;; 	(label :text {substring(current-idx,33,34) == "0" ? "" : ""} )
+  ;;   ) 
+		(box
+			;; :class {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "2" ? "active-workspace" : "regular"}
+      :valign "center"
+      :space-evenly false
+      :halign "center"
+			(label :text {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "1" ? "" : ""})
+    )
+		(box
+      :valign "center"
+      :halign "center"
+			(label :text {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "2" ? "" : ""})
+    )
+		(box
+      :valign "center"
+      :halign "center"
+			(label :text {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "3" ? "" : ""})
+    )
+		(box
+      :valign "center"
+      :halign "center"
+			(label :text {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "4" ? "" : ""})
+    )
+		(box
+      :valign "center"
+      :halign "center"
+			(label :text {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "5" ? "" : ""})
+    )
+		(box
+      :valign "center"
+      :halign "center"
+			(label :text {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "6" ? "" : ""})
+    )
+    (button
+      :valign "center"
+      :halign "center"
+      :class {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "6" ? "ativado" : "desativado"}
+    )
+			;; :class {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "2" ? "active-workspace" : "regular"})
+		;; (box
+		;; 	:class {replace(captures(names, "\"[0-9]\"")[captures(current-idx, "[0-9]")[0][0]][0], "\"", "") == "9" ? "active-workspace" : "regular"}
+		;; 	(label :text {names =~ `"9"` ? "" : ""}))
+  )
+)
+
+
+
+(defvar time-visible false)   ; for :run-while property of below variable
+                              ; when this turns true, the polling starts and
+                              ; var gets updated with given interval
+
+(defpoll time :interval "1s"
+              :initial "initial-value"  ; optional, defaults to poll at startup
+              :run-while time-visible   ; optional, defaults to 'true'
+  `date +%H:%M:%S`)
+
+
+(deflisten area-trabalho-total :initial "N/A" "xprop -spy -root _NET_DESKTOP_NAMES")
+(deflisten area-trabalho-atual :initial "N/A" "xprop -spy -root _NET_CURRENT_DESKTOP")

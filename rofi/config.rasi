@@ -1,8 +1,9 @@
 /**
  *
- * Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
  * Configuration For Rofi Version: 1.7.3
- *
  **/
 
 configuration {
@@ -14,7 +15,7 @@ configuration {
 	scroll-method: 0;
 	normalize-match: true;
 	show-icons: true;
-	icon-theme: "Zafiro";
+	icon-theme: "Papirus";
 /*	cache-dir: ;*/
 	steal-focus: false;
 /*	dpi: -1;*/
@@ -51,9 +52,9 @@ configuration {
 
 	/*---------- Fallback Icon ----------*/
 	run {
-		fallback-icon: "application-x-addon";
-	}
-	drun {
+    fallback-icon: "application-x-addon";
+  } 
+  drun {
 		fallback-icon: "application-x-addon";
 	}
 
@@ -89,7 +90,6 @@ configuration {
 	sort: false;
 	threads: 0;
 	click-to-exit: true;
-	hover-select: true;
 /*	ignored-prefixes: "";*/
 /*	pid: "/run/user/1000/rofi.pid";*/
 
@@ -173,13 +173,12 @@ configuration {
 	kb-select-8: "Super+8";
 	kb-select-9: "Super+9";
 	kb-select-10: "Super+0";
-*/
-	/*---------- Mouse ----------*/
 	ml-row-left: "ScrollLeft";
 	ml-row-right: "ScrollRight";
 	ml-row-up: "ScrollUp";
 	ml-row-down: "ScrollDown";
-	me-select-entry: "";
-	me-accept-entry: "MousePrimary";
+	me-select-entry: "MousePrimary";
+	me-accept-entry: "MouseDPrimary";
 	me-accept-custom: "Control+MouseDPrimary";
+*/
 }

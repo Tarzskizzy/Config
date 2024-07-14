@@ -1,0 +1,38 @@
+.EwwBar_OneDark{
+  /* background-color: #282C34; */
+  background-color: rgba(0,0,0,0);
+  color: white;
+}
+
+.bar{
+  padding: 0.2rem;
+}
+
+.tempo{
+  border-radius:0.5rem;
+  padding: 0.1rem 1rem;
+}
+
+.workspaces-kit{
+  background-color:red;
+  border-radius:0.5rem;
+  padding: 0.1rem 1rem;
+}
+
+.system-tray{
+  background-color:yellow;
+  padding: 0.1rem 1rem;
+  border-radius: 0.5rem;
+
+}
+
+.desativado{
+  background-color: blue;
+  margin: 0.5rem 0rem;
+  border-radius: 10rem;
+}
+.ativado{
+  background-color: red;
+}
+
+/* .workspaces-kit{} */

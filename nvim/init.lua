@@ -6,7 +6,8 @@ if not vim.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release lazypath,
+		"--branch=stable", -- latest stable release 
+		lazypath,
 	})
 end
 vim.opt.rtp:prepend(lazypath)
@@ -22,5 +23,7 @@ require("lazy").setup({
 	},
 })
 require("hotkeys")
+require("lsps")
 -- SETUP THEME VIM
 vim.cmd("colorscheme tokyonight-night")
+require("onedark").load()
