@@ -1,0 +1,20 @@
+require("plugins.core.oil")
+require("plugins.core.bufferline")
+require("plugins.core.colorizer")
+require("plugins.core.comment")
+require("plugins.core.devicons")
+require("plugins.core.gitsigns")
+require("plugins.core.lualine")
+require("plugins.core.ibl")
+require("plugins.core.markdown-preview")
+require("plugins.core.surround")
+require("plugins.core.telescope")
+-- LSP
+require("plugins.languages.flutter-tools")
+require("plugins.languages.lsp")
+require("plugins.languages.luaSnip")
+require("plugins.languages.nvim-cmp")
+require("plugins.languages.treesitter")
+-- THEMES
+require("plugins.themes.onedark")
+
