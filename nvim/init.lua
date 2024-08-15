@@ -26,6 +26,9 @@ local plugins = {
   -- Core Plugins
   "christoomey/vim-tmux-navigator",cmd = {"TmuxNavigateLeft","TmuxNavigateDown","TmuxNavigateUp","TmuxNavigateRight","TmuxNavigatePrevious"},
   "akinsho/bufferline.nvim",
+  {-- amongst your other plugins
+    {'akinsho/toggleterm.nvim', version = "*", opts = {--[[ things you want to change go here]]}}
+  },
   "norcalli/nvim-colorizer.lua",
   "nvim-tree/nvim-web-devicons",
   "lewis6991/gitsigns.nvim",
@@ -56,7 +59,7 @@ local opts = {}
 require("lazy").setup(plugins,opts)
 require("hotkeys")
 require("init")
--- require("lsps")
+require("lsps")
 -- require("plugins")
 
 

@@ -26,24 +26,12 @@ lsp.lua_ls.setup{
     },
   },
 }
-lsp.clangd.setup{
-  on_attach = on_attach,
-  capabilities = capabilities
-}
-lsp.pyright.setup{
-  on_attach = on_attach,
-  capabilities = capabilities
-}
-lsp.cssls.setup{
-  on_attach = on_attach,
-  capabilities = capabilities
+--outros LSPS==================================================================================================
 
-}
-lsp.html.setup{
-  on_attach = on_attach,
-  capabilities = capabilities
-}
-lsp.biome.setup{
-  on_attach = on_attach,
-  capabilities = capabilities
-}
+local servers = {"clangd","pyright","cssls","html","biome"}
+for _,lisp in ipairs(servers) do
+  lsp[lisp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+  }
+end

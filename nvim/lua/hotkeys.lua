@@ -17,8 +17,8 @@ vim.keymap.set('n','<C-l>',':TmuxNavigateRight<Enter>')
 
 -- TOGGLE TERM HOTKEYS
 vim.keymap.set('n','<leader>tf',':ToggleTerm direction=float<Enter>',opts)
-vim.keymap.set('n','<leader>tt',':ToggleTerm <Enter>',opts)
-vim.keymap.set('n','<leader>tv',':ToggleTerm direction=vertical size=40<Enter>',opts)
+vim.keymap.set('n','<leader>h',':ToggleTerm <Enter>',opts)
+vim.keymap.set('n','<leader>v',':ToggleTerm direction=vertical size=40<Enter>',opts)
 
 -- IN TOGGLE TERM HOTKEYS
 vim.keymap.set('t','<C-h>','htop<Enter>',opts)
